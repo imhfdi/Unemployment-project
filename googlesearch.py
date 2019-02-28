@@ -1,40 +1,38 @@
-#Project not complate .. !
+# not Compleate .. !
 
-import webbrowser
 import os
+import webbrowser
 
 os.system('clear')
+
 def googlesearch():
-        search = input("\n Google Search For .. :")
-        webbrowser.open_new_tab('https://google.com/search?btnG=1&q=%s' % search)
-        op2 = ("Do You Want Search Again .. ? (y/N)")
-        if (op2 == "y"):
-            googlesearch()
-            invalid_input = False
+    search = input("\n Google Search For .. 99 for back: ")
+    webbrowser.open_new_tab('https://google.com/search?btnG=1&q=%s'% search)
 
-        elif (op2 == "Y"):
-            googlesearch()
-            invalid_input = False
-
-        elif (op2 == "n"):
-           mainmeu()
-           invalid_input = False
-        else:
-            print("OWK ..")
-            invalid_input = False
-invalid_input = True
 def mainmenu():
-     print("What Do You Want .. ?")
-     op = input("1 or 2 : ")
-     if (op == "1"):
-         invalid_input = False
-         googlesearch()
+    print("Author : Github.com/imhfdi :D")
+    print("1: Google Search\nq: for quit ")
 
-     elif (op == "2"):
-         print("Good by ..\nSee You Again ..:)")
+mainmenu()
+inp1 = input("input : ")
+if (inp1 == "1"):
+    googlesearch()
+    inp2 = input("Do you need search again .. ? (y/N)").lower()
+    invalid_input = False
 
-     else:
-         print("Please Type 1 Or 2")
-         mainmenu()
+    if (inp2 == "y"):
+        os.system('clear')
+        googlesearch()
+        invalid_input = False
+    elif (inp2 == "n"):
+        quit()
+
+elif (inp1 == "q"):
+    print("Good Luck Buddy .. !")
+    invalid_input = True
+
+else:
+    print("Invalid Input .. !")
+
 while invalid_input : # this will loop until invalid_input is set to be True
     mainmenu()
